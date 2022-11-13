@@ -9,8 +9,8 @@ stages {
     stage('Getting project from Github') {
             steps {
                 git branch : 'Iheb' ,
-                    url : 'https://github.com/ihebhamdi/DevOpsFront.git',
-                    credentialsId:"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";
+                git branch: 'Ghaith', url: 'https://github.com/GhaithBh/front.git',
+                credentialsId:"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";
             }
         }
         stage('Install') {
@@ -26,20 +26,20 @@ stages {
         
         stage ('Build our image'){
             steps{
-                sh 'docker build -t ihebhamdi/achat_front .'
+                sh 'docker build -t ghaithbhs/achat_frontf .'
             }
         }
         stage('Docker login')
         {
             steps {
-                sh 'echo $dockerhub_PSW | docker login -u ihebhamdi -p dckr_pat_OaNAxtGSk9tP8ZPv8g08oIpcc4w'
+                sh 'echo $dockerhub_PSW | docker login -u ghaithbhs -p dckr_pat_PvFfLE0rm--tKJiRL1igKeLc2fQ'
             }    
        
         }
       stage('Push') {
 
 			steps {
-				sh 'docker push ihebhamdi/achat_front'
+				sh 'docker push ghaithbhs/achat_frontf'
 			}
 		}
     }
