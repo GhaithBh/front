@@ -9,7 +9,7 @@ stages {
     stage('Getting project from Github') {
             steps {
                 git branch : 'Ghaith' ,
-                git branch: 'Ghaith', url: 'https://github.com/GhaithBh/front.git',
+                url: 'https://github.com/GhaithBh/front.git',
                 credentialsId:"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";
             }
         }
